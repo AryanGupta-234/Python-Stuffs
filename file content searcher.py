@@ -13,10 +13,11 @@ class file_system :
     def __init__(self,directory):
         self.directory=directory
         if os.path.exists(self.directory):
-            print(colored("Location set to ","magenta"),colored(loc,"red"))
+            print(colored("Location set to ","magenta"),colored(self.directory,"red"))
             self.search_data()
         else:
             print(colored("Wrong directory detected","red"))
+            main()
             return
         
     def file_reader(self):
@@ -48,11 +49,12 @@ class file_system :
         if c==0:
             print(colored("No files found with the given data","green"))
      
-        
-loc=input(colored("Enter the location where search is to be performed :-: ",'green'))
-ob1=file_system(loc)                    
 
+def main():        
+    loc=input(colored("Enter the location where search is to be performed :-: ",'green'))
+    ob1=file_system(loc)                    
 
+main()
 
 
 # import nltk
